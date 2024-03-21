@@ -1,8 +1,9 @@
 body {
     margin: 0px;
+    padding: 0%;
     height: 100%;
     width: 100%;
-    background-color: rgb(73, 68, 68)
+    background-color: rgb(69, 136, 149)
 }
 
 @media screen and (max-width: 768px) {
@@ -25,16 +26,57 @@ body {
         width: 100%;
         height: 100%;
         display: grid;
-        grid-template-columns: 10vw 40vw 40vw 10vw;
-        grid-template-rows: 10vh 20vh 20vh 20vh 18vh;
+        grid-template-columns: 10vw 80vw 10vw;
+        grid-template-rows: 10vh 30vh 30vh 30vh 30vh 30vh 30vh 18vh;
         grid-template-areas:
-            'menu header header aaa'
-            'bg1 bg1 pic1 pic1'
-            'bg1 bg1 pic1 pic1'
-            'bg1 bg1 pic1 pic1'
-            'footer footer footer footer';
-        
+            'menu header z'
+            'pic1 pic1 pic1'
+            'bg1 bg1 bg1'
+            'pic2 pic2 pic2'
+            'bg2 bg2 bg2'
+            'pic3 pic3 pic3'
+            'bg3 bg3 bg3'
+            'footer footer footer';
     }
+
+    #bg1{
+        grid-area: bg1;
+    }
+    #bg2{
+        grid-area: bg2;
+    }
+    #bg3{
+        grid-area: bg3;
+    }
+
+    #pic1{
+        grid-area: pic1;
+    }
+    #pic2{
+        grid-area: pic2;
+    }
+    #pic3{
+        grid-area: pic3;
+    }
+
+    #bg1, #bg2, #bg3 {
+        margin-top: 40px;
+        display: flex;
+        justify-content: left;
+        overflow: auto;
+    }
+
+    #pic1, pic2, pic3{
+        display: flex;
+        justify-content: space-around;
+    }
+
+    #wrapperbg img {
+        max-width: 100vh; 
+        max-height: 100%;
+        object-fit: contain;
+    }
+    
 
     .header {
         grid-area: header;
@@ -49,8 +91,11 @@ body {
 
     .picture {
         grid-area: img1;
-        background-image: url("../img/bg.jpg");
         margin: 0px;
+    }
+
+    .picture img{
+        width: 100%;
     }
 
     .links {
@@ -64,30 +109,32 @@ body {
         grid-area: footer;
     }
 
-    #submitbutton {
-        display: inline-block;
-        padding: 0px 10px;
-        /* Adjust padding for smaller size */
-        font-size: 14px;
-        /* Adjust font size for smaller size */
-        color: #fff;
-        background-color: #007bff;
-        border: 2px solid #007bff;
-        border-radius: 8px;
-        /* Adjust the border-radius for rectangular shape */
-        cursor: pointer;
+    .button {
+        background-color: #0088ff;
+        border: none;
+        color: white;
+        padding: 6px 16px;
+        text-align: center;
         text-decoration: none;
-        transition: all 0.3s ease;
-        width: calc(2 * (50px));
-        /* Set width as double the height of the grid row */
-        height: 50px;
-        /* Set height to match the grid row height */
-    }
+        display: inline-block;
+        font-size: 14px;
+        margin: 2px 2px;
+        transition-duration: 0.8s;
+        cursor: pointer;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        height: 6vh;
+      }
+      
+      .button:hover {
+        background-color: #00ffbf;
+        transform: scale(1.1);
+      }
 
-    #submitbutton:hover {
-        background-color: #0056b3;
-        border-color: #0056b3;
-    }
+      .button a{
+        text-decoration: none;
+        color: inherit;
+      }
 
     .menu {
         height: 100vh;
@@ -158,7 +205,7 @@ body {
 
     sendbutton {
         background-color: #4CAF50;
-        color: white;
+        color: rgb(255, 255, 255);
         padding: 10px 20px;
         border: none;
         border-radius: 5px;
@@ -197,15 +244,18 @@ body {
         width: 100%;
         height: 100%;
         display: grid;
-        grid-template-columns: 10vw 20vw 60vw 10vw;
-        grid-template-rows: 10vh 20vh 20vh 20vh 18vh;
+        grid-template-columns: 10vw 30vw 35vw 25vw;
+        grid-template-rows: 10vh 40vh 40vh 40vh 18vh;
         grid-template-areas:
-            'menu header header aaa'
+            'menu header header s'
             'bg1 bg1 pic1 pic1'
-            'bg2 bg2 pic2 pic2'
+            'pic2 pic2 bg2 bg2'
             'bg3 bg3 pic3 pic3'
             'footer footer footer footer';
-        
+    }
+
+    img{
+        box-shadow: 3px 3px 3px 3px #333333;
     }
 
     #bg1{
@@ -213,19 +263,32 @@ body {
     }
     #bg2{
         grid-area: bg2;
+        margin-right: 60px;
     }
     #bg3{
         grid-area: bg3;
     }
 
+
+    #bg1, #bg2, #bg3{
+        margin-top: 100px;
+    }
+
     #pic1{
         grid-area: pic1;
+        display: flex;
+        justify-content: center;
     }
     #pic2{
         grid-area: pic2;
     }
     #pic3{
         grid-area: pic3;
+    }
+
+    #pic1, #pic2, #pic3 {
+        display: flex;
+        justify-content: left;
     }
 
     #satellite{
@@ -256,9 +319,9 @@ body {
     }
 
     .picture img {
-        width: 100%; /* Make the image fill the container horizontally */
-        height: 100%; /* Make the image fill the container vertically */
-        object-fit: contain; /* Maintain aspect ratio */
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
       }
     
 
@@ -276,21 +339,16 @@ body {
     #submitbutton {
         display: inline-block;
         padding: 0px 10px;
-        /* Adjust padding for smaller size */
         font-size: 21px;
-        /* Adjust font size for smaller size */
-        color: #fff;
+        color: #ffffff;
         background-color: #007bff;
         border: 2px solid #007bff;
         border-radius: 8px;
-        /* Adjust the border-radius for rectangular shape */
         cursor: pointer;
         text-decoration: none;
         transition: all 0.3s ease;
         width: calc(2 * (50px));
-        /* Set width as double the height of the grid row */
         height: 50px;
-        /* Set height to match the grid row height */
     }
 
     #submitbutton:hover {
@@ -377,6 +435,34 @@ body {
     sendbutton:hover {
         background-color: #45a049;
     }
+
+    .button {
+        background-color: #0088ff;
+        border: none;
+        color: white;
+        padding: 6px 16px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 20px;
+        margin: 2px 2px;
+        transition-duration: 0.8s;
+        cursor: pointer;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        height: 8vh;
+      }
+      
+      .button:hover {
+        background-color: #00ffbf;
+        transform: scale(1.1);
+      }
+
+      .button a{
+        text-decoration: none;
+        color: inherit;
+      }
+      
 
 
 
