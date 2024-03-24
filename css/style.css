@@ -1,40 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
+
+
 body {
-    margin: 0px;
     padding: 0%;
+    margin: 0;
     height: 100%;
     width: 100%;
-    background-color: rgb(69, 136, 149);
+    background-color: #f5e0b4;
     overflow-x: hidden;
+    font-family: Crimson Text;
 }
 
-a{
+a {
+    display: inline-block;
     text-decoration: none;
-    color: #00ffbf;
-  }
+    color: inherit;
+}
+
+img {
+    display: block;
+}
 
 @media screen and (max-width: 768px) {
 
     #wrappermain {
+        overflow-x: hidden;
         width: 100%;
         height: 100%;
         display: grid;
         grid-template-columns: 10vw 40vw 40vw 10vw;
-        grid-template-rows: 10vh 45vh 25vh 20vh 18vh;
+        grid-template-rows: 15vh 45vh 22vh 14vh 16vh;
         grid-template-areas:
             'menu header header aaa'
             'sum sum sum sum'
             'img1 img1 img1 img1'
-            'planets planets planets planets'
             'links links links links'
+            'planets planets planets planets'
             'footer footer footer footer';
     }
 
-    #wrapperbg{
+    #wrapperbg {
         width: 100%;
         height: 100%;
         display: grid;
         grid-template-columns: 10vw 80vw 10vw;
-        grid-template-rows: 10vh 30vh 30vh 30vh 30vh 30vh 30vh 18vh;
+        grid-template-rows: 15vh 30vh 30vh 30vh 30vh 30vh 30vh 25vh;
         grid-template-areas:
             'menu header z'
             'pic1 pic1 pic1'
@@ -46,44 +56,82 @@ a{
             'footer footer footer';
     }
 
-    #bg1{
+    #wrappercap {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 10vw 80vw 10vw;
+        grid-template-rows: 15vh 30vh 30vh 30vh 30vh 30vh 30vh 25vh;
+        grid-template-areas:
+            'menu header z'
+            'pic1 pic1 pic1'
+            'bg1 bg1 bg1'
+            'pic2 pic2 pic2'
+            'bg2 bg2 bg2'
+            'pic3 pic3 pic3'
+            'bg3 bg3 bg3'
+            'footer footer footer';
+    }
+
+    #wrappercontact {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 10vw 80vw 10vw;
+        grid-template-rows: 20vh 40vh 23vh 25vh;
+        grid-template-areas:
+            'menu header star'
+            'contact contact contanct'
+            'space space space'
+            'footer footer footer';
+    }
+
+    #bg1 {
         grid-area: bg1;
     }
-    #bg2{
+
+    #bg2 {
         grid-area: bg2;
     }
-    #bg3{
+
+    #bg3 {
         grid-area: bg3;
     }
 
-    #pic1{
+    #pic1 {
         grid-area: pic1;
     }
-    #pic2{
+
+    #pic2 {
         grid-area: pic2;
     }
-    #pic3{
+
+    #pic3 {
         grid-area: pic3;
     }
 
-    #bg1, #bg2, #bg3 {
+    #bg1,
+    #bg2,
+    #bg3 {
         margin-top: 40px;
         display: flex;
         justify-content: left;
         overflow: auto;
     }
 
-    #pic1, pic2, pic3{
+    #pic1,
+    pic2,
+    pic3 {
         display: flex;
         justify-content: space-around;
     }
 
     #wrapperbg img {
-        max-width: 100vh; 
+        max-width: 100vh;
         max-height: 100%;
         object-fit: contain;
     }
-    
+
 
     .header {
         grid-area: header;
@@ -101,7 +149,7 @@ a{
         margin: 0px;
     }
 
-    .picture img{
+    .picture img {
         width: 100%;
     }
 
@@ -116,6 +164,10 @@ a{
         grid-area: footer;
         display: flex;
         justify-content: space-around;
+    }
+
+    .ft ul {
+        font-size: 16px;
     }
 
     .button {
@@ -133,22 +185,22 @@ a{
         border-radius: 8px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         height: 6vh;
-      }
-      
-      .button:hover {
+    }
+
+    .button:hover {
         background-color: #00ffbf;
         transform: scale(1.1);
-      }
+    }
 
-      .button a{
+    .button a {
         text-decoration: none;
         color: inherit;
-      }
+    }
 
     .menu {
-        height: 100vh;
+        height: 50vh;
         width: 35vw;
-        background: #007bff;
+        background-color: #f5e0b4;
         position: fixed;
         top: 0;
         left: -90vw;
@@ -163,8 +215,12 @@ a{
         display: inline;
     }
 
+    .star {
+        display: none;
+    }
+
     .menu-button i.material-icons {
-        font-size: 2.5rem;
+        font-size: 100px;
     }
 
     .show {
@@ -225,10 +281,15 @@ a{
         background-color: #45a049;
     }
 
-    #satellite{
+    #satellite {
         display: none;
     }
 
+    .planets img {
+        box-shadow: none;
+        height: 100px;
+        width: 100px;
+    }
 
 }
 
@@ -240,84 +301,126 @@ a{
         height: 100%;
         display: grid;
         grid-template-columns: 20vw 30vw 30vw 20vw;
-        grid-template-rows: 10vh 40vh 25vh 30vh 20vh 18vh;
+        grid-template-rows: 20vh 50vh 15vh 30vh 22vh;
         grid-template-areas:
-            'menu header header links2'
+            'menu header header star'
             'sum sum sat sat'
-            'planets planets planets planets'
             'links links links links'
+            'planets planets planets planets'
             'footer footer footer footer';
 
     }
 
-    #wrapperbg{
+    #wrapperbg {
         width: 100%;
         height: 100%;
         display: grid;
-        grid-template-columns: 10vw 30vw 35vw 25vw;
-        grid-template-rows: 10vh 40vh 40vh 40vh 18vh;
+        grid-template-columns: 20vw 30vw 30vw 20vw;
+        grid-template-rows: 20vh 40vh 40vh 40vh 22vh;
         grid-template-areas:
-            'menu header header s'
+            'menu header header star'
             'bg1 bg1 pic1 pic1'
             'pic2 pic2 bg2 bg2'
             'bg3 bg3 pic3 pic3'
             'footer footer footer footer';
     }
 
-    #wrappercap{
+    #wrappercap {
         width: 100%;
         height: 100%;
         display: grid;
-        grid-template-columns: 10vw 30vw 35vw 25vw;
-        grid-template-rows: 10vh 40vh 40vh 40vh 18vh;
+        grid-template-columns: 20vw 30vw 30vw 20vw;
+        grid-template-rows: 20vh 40vh 40vh 40vh 22vh;
         grid-template-areas:
-            'menu header header s'
+            'menu header header star'
             'pic1 pic1 bg1 bg1'
             'bg2 bg2 pic2 pic2'
             'pic3 pic3 bg3 bg3'
             'footer footer footer footer';
     }
 
+    #wrappercontact {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 25vw 50vw 25vw;
+        grid-template-rows: 20vh 40vh 30vh 22vh;
+        grid-template-areas:
+            'menu header star'
+            'contact contact contanct'
+            'space space space'
+            'footer footer footer';
+    }
 
 
-    #bg1{
+    .star {
+        grid-area: star;
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: row-reverse;
+        align-items: center;
+        width: 15vh;
+        height: 15vh;
+    }
+
+    .star img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+        box-shadow: none;
+
+    }
+
+    #bg1 {
         grid-area: bg1;
     }
-    #bg2{
+
+    #bg2 {
         grid-area: bg2;
-        margin-right: 60px;
     }
-    #bg3{
+
+    #bg3 {
         grid-area: bg3;
     }
 
 
-    #bg1, #bg2, #bg3{
+    #bg1,
+    #bg2,
+    #bg3 {
         margin-top: 100px;
+        font-size: 18px;
+        margin-left: 20px;
+        margin-right: 20px;
     }
 
-    #pic1{
+    #pic1 {
         grid-area: pic1;
         display: flex;
         justify-content: center;
     }
-    #pic2{
+
+    #pic2 {
         grid-area: pic2;
     }
-    #pic3{
+
+    #pic3 {
         grid-area: pic3;
     }
 
-    #pic1, #pic2, #pic3 {
+    #pic1,
+    #pic2,
+    #pic3 {
         display: flex;
-        justify-content: left;
+        justify-content: center;
+        margin-left: 25px;
     }
 
-    #satellite{
+    #satellite {
         grid-area: sat;
+        margin-bottom: 20px;
     }
 
-    #satellite img{
+    #satellite img {
         display: flex;
         justify-content: space-around;
         height: 100%;
@@ -333,6 +436,7 @@ a{
     .summary {
         margin: 10px;
         grid-area: sum;
+        font-size: 22px;
     }
 
     .picture {
@@ -344,8 +448,8 @@ a{
         width: 100%;
         height: 100%;
         object-fit: contain;
-      }
-    
+    }
+
 
     .links {
         grid-area: links;
@@ -361,9 +465,8 @@ a{
         padding: 0px 10px;
         font-size: 21px;
         color: #ffffff;
-        background-color: #007bff;
         border: 2px solid #007bff;
-        border-radius: 8px;
+        border-radius: 8pxrgb(0, 81, 167);
         cursor: pointer;
         text-decoration: none;
         transition: all 0.3s ease;
@@ -379,7 +482,7 @@ a{
     .menu {
         height: 100vh;
         width: 15vw;
-        background: #26394d;
+        background: #ffb12a;
         position: fixed;
         top: 0;
         left: -90vw;
@@ -395,7 +498,7 @@ a{
     }
 
     .menu-button i.material-icons {
-        font-size: 2.5rem;
+        font-size: 80px;
     }
 
     .show {
@@ -443,21 +546,8 @@ a{
         border-radius: 5px;
     }
 
-    sendbutton {
-        background-color: #4CAF50;
-        color: rgb(0, 0, 250);
-        padding: 10px 20px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-
-    sendbutton:hover {
-        background-color: #45a049;
-    }
-
     .button {
-        background-color: #0088ff;
+        background-color: #ffb700;
         border: none;
         color: white;
         padding: 6px 16px;
@@ -471,51 +561,98 @@ a{
         border-radius: 9px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         height: 7vh;
-      }
-      
-      .button:hover {
-        background-color: #00ffbf;
-        transform: scale(1.1);
-      }
+    }
 
-      .button a{
+    .button:hover {
+        background-color: #fa5243;
+        transform: scale(1.1);
+    }
+
+    .button a {
         text-decoration: none;
         color: inherit;
-      }
-      
+    }
+
+    .planets img {
+        box-shadow: none;
+        height: 250px;
+        width: 250px;
+    }
+
+
+
 }
 
-ul{
+ul {
     list-style-type: none;
 }
 
 .ft {
     grid-area: footer;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    margin-top: 14px;
     display: flex;
-    justify-content: space-around;
-
+    justify-content: space-evenly;
+    width: 100%;
 }
 
-img{
+.ft ul {
+    list-style-type: none;
+    padding: 0;/
+}
+
+.ft ul li {
+    margin-bottom: 10px;
+}
+
+.ft ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+.ft ul li a:hover {
+    text-decoration: underline;
+}
+
+img {
     box-shadow: 3px 3px 3px 3px #333333;
 }
 
-.planets{
+.planets {
     grid-area: planets;
     display: flex;
     justify-content: space-around;
 }
 
-.planets img{
+
+
+.header img {
+
     box-shadow: none;
-    height: 150px;
-    width: 150px;
-
-}
-
-.header img{
-
-box-shadow: none;
 }
 
 
+.contact {
+    grid-area: contact;
+    margin-left: 8px;
+}
+
+.space2 {
+    grid-area: space;
+    max-width: 100vw;
+    overflow: hidden;
+}
+
+.space2 img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.menu {
+    font-size: 22px;
+    margin: 0;
+}
