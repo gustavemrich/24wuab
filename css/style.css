@@ -458,22 +458,6 @@ img {
         margin: 15px;
     }
 
-
-
-    #submitbutton {
-        display: inline-block;
-        padding: 0px 10px;
-        font-size: 21px;
-        color: #ffffff;
-        border: 2px solid #007bff;
-        border-radius: 8pxrgb(0, 81, 167);
-        cursor: pointer;
-        text-decoration: none;
-        transition: all 0.3s ease;
-        width: calc(2 * (50px));
-        height: 50px;
-    }
-
     #submitbutton:hover {
         background-color: #0056b3;
         border-color: #0056b3;
@@ -600,7 +584,7 @@ ul {
 
 .ft ul {
     list-style-type: none;
-    padding: 0;/
+    padding: 0;
 }
 
 .ft ul li {
